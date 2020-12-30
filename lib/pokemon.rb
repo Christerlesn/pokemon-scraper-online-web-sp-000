@@ -9,7 +9,7 @@ class Pokemon
     @db = db
   end
 
-  def save(name, type, db)
+  def self.save(name, type, db)
     sql = "INSERT INTO pokemon(name, type, db) VALUES (?, ?, ?)"
     @db.execute(sql, name, type, db)
     #DB[:conn].execute(sql, self.name, self.type, self.db)
