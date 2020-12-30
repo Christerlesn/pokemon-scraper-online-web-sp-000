@@ -17,6 +17,6 @@ class Pokemon
 def self.find
 
 end
-  
+
   #The Pokemon class is responsible for saving, adding, removing, or changing anything about each Pokémon.
 end
