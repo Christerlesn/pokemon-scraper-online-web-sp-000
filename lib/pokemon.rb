@@ -8,5 +8,13 @@ class Pokemon
     @type = type
     @db = db
   end
+
+  def self.save(name, type, db)
+    sql <<-SQL 
+    INSERT INTO pokemon(name, type, db) VALUES (?, ?, ?)
+    SQL
+#WHERE id = ?
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
+  end
   #The Pokemon class is responsible for saving, adding, removing, or changing anything about each Pokémon.
 end
