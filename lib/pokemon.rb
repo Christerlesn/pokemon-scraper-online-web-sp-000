@@ -18,6 +18,11 @@ class Pokemon
     @id = db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
   end
 
+  def self.find(id, db)
+    sql = <<-SQL
+    "SELECT * FROM pokemon WHERE id = ?"
+    SQL
 
-  #The Pokemon class is responsible for saving, adding, removing, or changing anything about each Pokémon.
+    db.execute(sql, id)
+  end
 end
