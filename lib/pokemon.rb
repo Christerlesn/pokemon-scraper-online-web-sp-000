@@ -22,8 +22,8 @@ class Pokemon
     sql = <<-SQL
     "SELECT * FROM pokemon WHERE id = ?"
     SQL
-    
+
     db.execute(sql,id)[0]
-    
+
   end
 end
